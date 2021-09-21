@@ -1,5 +1,19 @@
       subroutine ispline(u,newy,nu,x,y,b,c,d,n)
-
+!======================================================================
+! function ispline evaluates the cubic spline interpolation at point z **
+! ispline = y(i)+b(i)*(u-x(i))+c(i)*(u-x(i))**2+d(i)*(u-x(i))**3
+! where  x(i) <= u <= x(i+1)
+!----------------------------------------------------------------------
+! input..
+! u       = the abscissa at which the spline is to be evaluated
+! x, y    = the arrays of given data points
+! b, c, d = arrays of spline coefficients computed by spline
+! n       = the number of data points
+! output:
+! ispline = interpolated value at point u
+!----------------------------------------------------------------------
+! ** a modification to compute many Z points (Campos F., 2021)
+!=======================================================================
       implicit none
 
       integer, intent(in) :: n, nu
