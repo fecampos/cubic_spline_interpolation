@@ -1,4 +1,4 @@
-      program compute_vinterp
+      program main_code
 
       use netcdf
 
